@@ -1,0 +1,31 @@
+<%- include('partials/header') %> 
+    <div class="container">
+        <div class="title">
+            <h1>BIODATA <span class="username-title"><%= data.username %> </span></h1>
+        </div>
+        <div class="biodata">
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Nama</th>
+                    <td><input class="form-control" value="<%= data.user_game_biodatum.nama %>" id="form-nama"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Alamat</th>
+                    <td><input class="form-control" value="<%= data.user_game_biodatum.alamat %>" id="form-alamat"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tanggal Lahir</th>
+                    <td><input class="form-control" value="<%= data.user_game_biodatum.tanggalLahir %>" id="form-ttl"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Jenis Kelamin</th>
+                    <td><input class="form-control" value="<%= data.user_game_biodatum.jenisKelamin %>" id="form-gender"></td>
+                  </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary" onclick=createBiodata(<%= data.id %>)>Create</button>
+            <button type="submit" class="btn btn-primary" onclick=updateBiodata(<%= data.user_game_biodatum.id %>)>Update</button>
+        </div>
+    </div>
+<%- include('partials/footer') %> 

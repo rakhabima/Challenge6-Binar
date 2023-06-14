@@ -1,0 +1,35 @@
+<%- include('partials/header') %> 
+    <div class="container">
+        <div class="title">
+            <h1><span class="username-title"><%= data.username %> </span> SKOR LIST</h1>
+        </div>
+        <div class="skor-table">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Skor</th>
+                    <th scope="col">Date</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% for( let i = 0; i < data.user_game_histories.length; i++ ) { %>
+                        <tr>
+                          <th scope="row"><%= i+1 %> </th>
+                          <td><%= data.user_game_histories[i].skor %> </td>
+                          <td><%= data.user_game_histories[i].updatedAt %></td>
+                          <td><button class="btn btn-danger" onclick=deleteSkor(<%= data.user_game_histories[i].id %>)>delete</button></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+              </table>
+              <form>
+                <div class="mb-3">
+                  <input class="form-control" placeholder="Input Skor" id="skor-form">
+                </div>
+              </form>
+              <button class="btn btn-primary" onclick=inputSkor(<%= data.id %>)>Submit</button>
+        </div>
+    </div>
+<%- include('partials/footer') %> 

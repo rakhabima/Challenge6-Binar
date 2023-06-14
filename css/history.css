@@ -1,0 +1,14 @@
+.username-title {
+    text-transform: uppercase;
+}
+
+.title h1{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.skor-table {
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+}

@@ -1,0 +1,32 @@
+<%- include('partials/header') %> 
+    <div class="container">
+        <div class="title">
+            <h1>USERS LIST</h1>
+        </div>
+        <div class="user-table">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% for( let i = 0; i < data.length; i++ ) { %>
+                        <tr>
+                          <th scope="row"><%= i+1 %> </th>
+                          <td><%= data[i].username %> </td>
+                          <td><button class="btn btn-primary" onclick=redirectBiodata(<%= data[i].id %>)>biodata</button></td>
+                          <td><button class="btn btn-primary" onclick=redirectHistory(<%= data[i].id %>)>history</button></td>
+                          <td><button class="btn btn-danger" onclick=deleteUsername(<%= data[i].id %>)>delete</button></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+              </table>
+              <button class="btn btn-primary" onclick=redirectCreateUser()>Create User</button>
+        </div>
+    </div>
+<%- include('partials/footer') %> 
